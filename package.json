@@ -1,0 +1,23 @@
+{
+  "name": "employees",
+  "version": "1.0.0",
+  "description": "App to manage Employees in our company",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "Manage",
+    "Employees",
+    "Company"
+  ],
+  "author": "kkthecompguy",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^16.1.7",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mongoose": "^5.7.5"
+  }
+}
