@@ -1,7 +1,7 @@
 ## Project Name
 Employees Managment System
 
-##Description
+## Description
 This is a web application for managing employees in an organization. It is a complete CRUD application with backend implementation
  and with a good visualize frontend. Its developed on express framework as the backend
 
@@ -13,7 +13,7 @@ This is a web application for managing employees in an organization. It is a com
 5. Josphat,
 6. Victor
 
-##Requirement
+## Requirement
 1. Ensure you have node installed
 2. Ensure you have npm installed
 3. Ensure you have MongoDB installed
