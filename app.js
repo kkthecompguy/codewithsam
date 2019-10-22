@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -33,6 +34,9 @@ app.use(bodyParser.json());
 // Method Override Middleware
 app.use(methodOveride('_method'));
 
+//Express static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
@@ -41,6 +45,10 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about');
+});
+
+app.get('/services', (req, res) => {
+  res.render('services');
 });
 
 

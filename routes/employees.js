@@ -80,9 +80,9 @@ router.get('/edit/:id', (req, res) => {
 });
 
 //@desc  to update employee
-router.put('/edit/:id', (req, res) => {
-  Employee.findOne({ 
-    _id: req.body.id 
+router.post('/edit/:id', (req, res) => {
+  Employee.findByIdAndUpdate({ 
+    _id: req.params.id 
   })
   .then(employee => {
     if(!employee) return res.status(404).redirect('/employees', {
@@ -92,8 +92,8 @@ router.put('/edit/:id', (req, res) => {
     const { error } = validateEmployee(req.body);
 
     if(error) return res.status(400).render('employee/edit', {
-      employee: employee,
       error: error.details[0].message,
+      id: req.params.id,
       name: req.body.name,
       email: req.body.email,
       job: req.body.job,
@@ -115,6 +115,23 @@ router.put('/edit/:id', (req, res) => {
       if(err) throw err;
     });
 
+  })
+  .catch(err => {
+    if(err) throw err;
+  });
+});
+
+//@desc remove emmployee
+router.get('/:id', (req, res) => {
+  Employee.findByIdAndDelete({
+    _id: req.params.id
+  })
+  .then(employee => {
+    if(!employee) return res.status(404).redirect('/employees', {
+      error: 'The employee with the given ID was not found'
+    });
+
+    res.status(200).redirect('/employees')
   })
   .catch(err => {
     if(err) throw err;

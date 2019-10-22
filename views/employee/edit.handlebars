@@ -5,8 +5,7 @@
   </div>
 {{/if}}
 <div class="card card-body">
-  <form action="/employees/edit/{{id}}/?_method=PUT" method="POST">
-  <input type="hidden" name="_method" value="PUT">
+  <form action="/employees/edit/{{id}}" method="POST">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" name="name" value="{{name}}" placeholder="Name" class="form-control">
